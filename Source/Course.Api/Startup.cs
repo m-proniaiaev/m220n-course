@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Course.Contracts;
+using Course.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Store.Core.Database;
 
 namespace M220N_mogo_cource
 {
@@ -27,9 +30,11 @@ namespace M220N_mogo_cource
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddMongo(Configuration);
+            services.AddScoped<IMovieService, MovieService>();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "M220N_mongo_cource", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "M220N_mongo_course", Version = "v1" });
             });
         }
 
@@ -40,7 +45,7 @@ namespace M220N_mogo_cource
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "M220N_mongo_cource v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "M220N_mongo_course v1"));
             }
 
             app.UseHttpsRedirection();

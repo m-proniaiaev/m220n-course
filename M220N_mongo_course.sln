@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{583D8277-E89D-4F25-8951-07BEB724E168}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M220N_mongo_cource", "Source\Course.Api\M220N_mongo_cource.csproj", "{6B6EA210-FD1F-4879-BF3A-1444F59303A0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M220N_mongo_course", "Source\Course.Api\M220N_mongo_course.csproj", "{6B6EA210-FD1F-4879-BF3A-1444F59303A0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{5344CEB0-91EF-4E78-A9BE-387DA3DB95CA}"
 EndProject
@@ -11,6 +11,12 @@ ProjectSection(SolutionItems) = preProject
 	Deploy\docker-compose.mongo.yml = Deploy\docker-compose.mongo.yml
 	Deploy\mongo.run.ps1 = Deploy\mongo.run.ps1
 EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Course.Database", "Source\Course.Database\Course.Database.csproj", "{1972F558-2E1D-4FB8-8F91-A13E59F2B6A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Course.Contracts", "Source\Course.Contracts\Course.Contracts.csproj", "{19424E2D-C8B9-4C1C-B5B5-91B64D2E6AFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Course.Services", "Source\Course.Services\Course.Services.csproj", "{4512E7F0-0ECA-417D-B480-D3E40DFB012A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,8 +28,23 @@ Global
 		{6B6EA210-FD1F-4879-BF3A-1444F59303A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B6EA210-FD1F-4879-BF3A-1444F59303A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B6EA210-FD1F-4879-BF3A-1444F59303A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1972F558-2E1D-4FB8-8F91-A13E59F2B6A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1972F558-2E1D-4FB8-8F91-A13E59F2B6A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1972F558-2E1D-4FB8-8F91-A13E59F2B6A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1972F558-2E1D-4FB8-8F91-A13E59F2B6A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19424E2D-C8B9-4C1C-B5B5-91B64D2E6AFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19424E2D-C8B9-4C1C-B5B5-91B64D2E6AFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19424E2D-C8B9-4C1C-B5B5-91B64D2E6AFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19424E2D-C8B9-4C1C-B5B5-91B64D2E6AFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4512E7F0-0ECA-417D-B480-D3E40DFB012A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4512E7F0-0ECA-417D-B480-D3E40DFB012A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4512E7F0-0ECA-417D-B480-D3E40DFB012A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4512E7F0-0ECA-417D-B480-D3E40DFB012A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6B6EA210-FD1F-4879-BF3A-1444F59303A0} = {583D8277-E89D-4F25-8951-07BEB724E168}
+		{1972F558-2E1D-4FB8-8F91-A13E59F2B6A2} = {5344CEB0-91EF-4E78-A9BE-387DA3DB95CA}
+		{19424E2D-C8B9-4C1C-B5B5-91B64D2E6AFF} = {5344CEB0-91EF-4E78-A9BE-387DA3DB95CA}
+		{4512E7F0-0ECA-417D-B480-D3E40DFB012A} = {5344CEB0-91EF-4E78-A9BE-387DA3DB95CA}
 	EndGlobalSection
 EndGlobal
