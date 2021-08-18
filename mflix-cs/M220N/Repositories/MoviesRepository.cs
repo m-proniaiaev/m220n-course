@@ -117,12 +117,17 @@ namespace M220N.Repositories
             // TODO Ticket: Projection - Search for movies by ``country`` and use projection to
             // return only the ``Id`` and ``Title`` fields
             //
-            //return await _moviesCollection
-            //   .Find(...)
-            //   .Project(...)
-            //   .ToListAsync(cancellationToken);
+            var filter = Builders<Movie>.Filter.In("countries", countries);
+            var sort = Builders<Movie>.Sort.Descending(x => x.Title);
+            var projection = Builders<Movie>.Projection
+                .Include(x => x.Title);
+            return await _moviesCollection
+               .Find(filter)
+               .Sort(sort)
+               .Project<MovieByCountryProjection>(projection)
+               .ToListAsync(cancellationToken);
 
-            return null;
+            //return null;
         }
 
         /// <summary>
@@ -193,9 +198,10 @@ namespace M220N.Repositories
 
             // TODO Ticket: Enable filtering of movies by genre.
             // If you get stuck see the ``GetMoviesByCastAsync`` method above.
-            /*return await _moviesCollection
-               .Find(...)
-               .ToListAsync(cancellationToken);*/
+            var filter = Builders<Movie>.Filter.In("genres", genres);
+            return await _moviesCollection
+               .Find(filter)
+               .ToListAsync(cancellationToken);
 
             // // TODO Ticket: Paging
             // TODO Ticket: Paging
