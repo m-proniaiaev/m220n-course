@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{583D8277-E89D-4F25-8951-07BEB724E168}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M220N_mongo_cource", "Source\Course.Api\M220N_mongo_cource.csproj", "{6B6EA210-FD1F-4879-BF3A-1444F59303A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{5344CEB0-91EF-4E78-A9BE-387DA3DB95CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deploy", "Deploy", "{1226BF31-1576-4AE5-8D11-8840FA23E4FB}"
+ProjectSection(SolutionItems) = preProject
+	Deploy\docker-compose.mongo.yml = Deploy\docker-compose.mongo.yml
+	Deploy\mongo.run.ps1 = Deploy\mongo.run.ps1
+EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B6EA210-FD1F-4879-BF3A-1444F59303A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B6EA210-FD1F-4879-BF3A-1444F59303A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B6EA210-FD1F-4879-BF3A-1444F59303A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B6EA210-FD1F-4879-BF3A-1444F59303A0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6B6EA210-FD1F-4879-BF3A-1444F59303A0} = {583D8277-E89D-4F25-8951-07BEB724E168}
+	EndGlobalSection
+EndGlobal
