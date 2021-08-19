@@ -114,9 +114,7 @@ namespace M220N.Repositories
             params string[] countries
             )
         {
-            // TODO Ticket: Projection - Search for movies by ``country`` and use projection to
-            // return only the ``Id`` and ``Title`` fields
-            //
+            
             var filter = Builders<Movie>.Filter.In("countries", countries);
             var sort = Builders<Movie>.Sort.Descending(x => x.Title);
             var projection = Builders<Movie>.Projection
@@ -126,8 +124,7 @@ namespace M220N.Repositories
                .Sort(sort)
                .Project<MovieByCountryProjection>(projection)
                .ToListAsync(cancellationToken);
-
-            //return null;
+            
         }
 
         /// <summary>
@@ -196,13 +193,16 @@ namespace M220N.Repositories
 
             var sort = new BsonDocument(sortKey, DefaultSortOrder);
 
-            // TODO Ticket: Enable filtering of movies by genre.
-            // If you get stuck see the ``GetMoviesByCastAsync`` method above.
+            
             var filter = Builders<Movie>.Filter.In("genres", genres);
-            return await _moviesCollection
+            returnValue = await _moviesCollection
                .Find(filter)
+               .Limit(limit)
+               .Skip(page * limit)
+               .Sort(sort)
                .ToListAsync(cancellationToken);
 
+            
             // // TODO Ticket: Paging
             // TODO Ticket: Paging
             // Modify the code you added in the Text and Subfield ticket to
