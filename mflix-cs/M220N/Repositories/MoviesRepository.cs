@@ -189,22 +189,17 @@ namespace M220N.Repositories
             string sortKey = DefaultSortKey, int limit = DefaultMoviesPerPage,
             int page = 0, params string[] genres)
         {
-            var returnValue = new List<Movie>();
-
             var sort = new BsonDocument(sortKey, DefaultSortOrder);
 
             
             var filter = Builders<Movie>.Filter.In("genres", genres);
-            returnValue = await _moviesCollection
+            var returnValue = await _moviesCollection
                .Find(filter)
                .Limit(limit)
                .Skip(page * limit)
                .Sort(sort)
                .ToListAsync(cancellationToken);
-
             
-            // // TODO Ticket: Paging
-            // TODO Ticket: Paging
             // Modify the code you added in the Text and Subfield ticket to
             // include pagination. Refer to the other methods in this class
             // if you need a hint.
@@ -223,7 +218,7 @@ namespace M220N.Repositories
             CancellationToken cancellationToken = default)
         {
             /*
-               TODO Ticket: Faceted Search
+               
 
                We have already built the pipeline stages you need to perform a
                faceted search on the Movies collection. Your task is to append the
@@ -255,8 +250,10 @@ namespace M220N.Repositories
             {
                 matchStage,
                 sortStage,
+                skipStage,
+                limitStage,
+                facetStage
                 // add the remaining stages in the correct order
-
             };
 
             // I run the pipeline you built
